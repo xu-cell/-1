@@ -1,0 +1,18 @@
+#include<iostream>
+#include<string>
+#include<vector>
+using namespace std;
+int fact(int a,const int* b)
+{
+    return (a>*b)?a:*b;
+     
+}
+int main()
+{   int i=6;
+    
+    int out_put=fact(7,&i);
+    cout<<out_put;
+    return 0;
+
+
+}
