@@ -1,0 +1,85 @@
+#include<iostream>
+using namespace std;
+#include<string>
+ class Cube
+{ //设计长
+  public:
+   void setL( int l)
+   {
+      M_L=l;
+   }
+  //获取长
+   int getL()
+   {
+       return M_L;
+   }
+  //设计高
+void setH( int h)
+   {
+      M_H=h;
+   }
+  //获取高
+  int getH()
+   {
+       return M_H;
+   }
+  //设计宽
+void setW( int w)
+   {
+      M_W=w;
+   }
+  //获取宽
+    int getW()
+   {
+       return M_W;
+   } 
+   int SquaruS()
+   {
+       return 2*(M_L*M_H+M_L*M_W+M_W*M_H);
+   }
+   int VVVV()
+   {
+       return M_L*M_H*M_W;
+   }
+   bool lei_issame(Cube &c2)
+   {
+       if(M_H==c2.getH()&&M_L==c2.getL()&&M_W==c2.getW())
+      return true;
+    else return false;
+   }
+private:
+     int M_L;//长
+     int M_H;//高
+     int M_W;//宽
+     
+};
+bool issame(Cube &c1,Cube &c2)
+{
+    if(c1.getH()==c2.getH()&&c1.getL()==c2.getL()&&c1.getW()==c2.getW())
+      return true;
+    else return false;
+}
+
+
+
+
+
+
+int main ()
+{
+    Cube c1;
+    c1.setL(10);
+    c1.setH(10);
+    c1.setW(10);
+    // cout<<"长方体的面积是："<<c1.SquaruS()<<endl;
+    // cout<<"长方体的体积是："<<c1.VVVV()<<endl;
+    Cube c2;
+    c2.setL(10);
+    c2.setH(10);
+    c2.setW(10);
+   int ret= c1.lei_issame(c2);
+   if(ret)
+   cout<<"他们相同"<<endl;
+   else cout<<"他们不同"<<endl;
+    return 0;
+}
